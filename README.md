@@ -1,1 +1,1 @@
-Presentación para la introducción a Flask de Diciembre en Python Madrid
+Presentación de Git y Github para los cursos del GUL de Marzo de 2012
