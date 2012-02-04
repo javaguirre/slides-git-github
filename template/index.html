@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Introducción a Git y Github</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='../slides.js'></script>
+  </head>
+
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+
+
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+
+      <!--<article class='biglogo'>
+      </article>-->
+      <!-- #1 -->
+      <article>
+        <h1>
+           Introducción a Git y Github <img src="../images/github.png" />
+        </h1>
+        <p>
+          <a href="http://javaguirre.net">Javier Aguirre</a>
+          <br />
+          <a href="http://ctrlz.es">Miguel de la Cruz</a>
+          <br/>
+          13 de Feb de 2012
+          <br/>
+        </p>
+        <div class="source">
+            <a href="http://gul.es">Cursos GUL</a> - Marzo 2012
+        </div>
+      </article>
+
+      <!-- #2 -->
+      <article>
+        <h3>Introducción/Historia</h3>
+        <ul>
+            <li>Creado por Linus Torvalds</li>
+            <li>Control de versiones distribuido</li>
+            <li>Inspirado en BitKeeper y Monotone</li>
+            <li><em>Estándar de facto</em> en el mundo del SL</li>
+        </ul>
+      </article>
+
+      <!-- #3 -->
+      <article>
+        <h3>Instalación</h3>
+        <pre>
+apt-get install git (git-core)
+        </pre>
+        <h4>Primera versión</h4>
+        <pre>
+cd miproyecto
+git init
+git add .
+git commit -m 'Primera version'
+
+# O
+
+git clone url_proyecto
+        </pre>
+      </article>
+
+      <!-- #4 -->
+      <article>
+        <h3>
+        Manejo de archivos
+        </h3>
+        <pre>
+git add archivonuevo
+git rm archivoviejo
+git mv archivoviejo archivonuevo
+        </pre>
+        <div class="source">
+            Fuente: <a href=""></a>
+        </div>
+      </article>
+
+      <article>
+        <h3>
+            Log
+        </h3>
+        <pre>
+git log  # Lista los últimos commits
+git log -n 30  # 30 ultimos commits
+git log -p  # ultimos cambios en codigo
+git log --stat  # ultimos cambios en archivos
+        </pre>
+        <pre>
+
+        </pre>
+      </article>
+      <article>
+        <h3>
+            Revertir cambios
+        </h3>
+        <pre>
+git checkout archivos
+git reset --hard SHA
+        </pre>
+      </article>
+      <article>
+        <h3>
+            Sincronización remota
+        </h3>
+        <pre>
+#Actualiza copia local
+git pull repo_remoto rama
+
+#Actualiza copia remota
+git push repo_remoto rama
+      </pre>
+      <pre>
+      </pre>
+      </article>
+      <article>
+      <h3>Parcheando</h3>
+      <pre>
+# Creamos un parche con la diferencia
+git diff archivos > miarchivo.patch
+# Aplicamos el parche en nuestro repo
+git apply miarchivo.patch
+      </pre>
+      </article>
+      <article>
+      <h3>Ramas</h3>
+      <p>
+      Hablar de las ramas y esas cosas
+      </p>
+      </article>
+      <article>
+        <h3>Participando en un proyecto</h3>
+        <p>Ejemplo entre dos usuarios y cómo se usaría git</p>
+        <pre>
+        </pre>
+      </article>
+      <article>
+        <h3></h3>
+        <ul>
+        </ul>
+        <div class="source">
+            <a href="">Documentación</a>
+        </div>
+      </article>
+      <article>
+        <h3>
+        </h3>
+        <ul>
+        </ul>
+        <br />
+        <p>Presentación en... <a href="">github</a></p>
+      </article>
+
+      <article>
+        <h3>
+          ¿Preguntas?
+        </h3>
+
+        <ul>
+          <li><a href="http://javaguirre.net">Blog</a></li>
+          <li>
+            <a href='http://twitter.com/javaguirre'>@javaguirre</a>
+          </li>
+        </ul>
+      </article>
+
+    </section>
+
+  </body>
+</html>
