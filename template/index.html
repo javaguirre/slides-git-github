@@ -119,7 +119,7 @@ git log --stat  # ultimos cambios en archivos
             Revertir cambios
         </h3>
         <pre>
-git checkout archivos
+git checkout [HASH] archivos
 git reset --hard SHA
         </pre>
       </article>
@@ -148,15 +148,57 @@ git apply miarchivo.patch
       </article>
       <article>
       <h3>Ramas</h3>
-      <p>
-      Hablar de las ramas y esas cosas
-      </p>
+      <pre>
+        git branch mi_rama_nueva
+        git checkout mi_rama_nueva
+      </pre>
+      <p>Cuando acabemos podemos unirla a principal</p>
+      <pre>
+        git checkout master
+        git merge mi_rama_nueva
+        git push origin master
+      </pre>
       </article>
       <article>
         <h3>Participando en un proyecto</h3>
         <p>Ejemplo entre dos usuarios y cómo se usaría git</p>
         <pre>
         </pre>
+      </article>
+      </article>
+      <article>
+        <h3>Creando un repositorio</h3>
+        <pre>
+            mkdir mi_proyecto
+            cd mi_proyecto
+            git init
+            git add .
+            git commit
+            git remote add origin url_de_mi_proyecto_remota
+            git push origin master
+        </pre>
+      </article>
+      <article>
+        <h3>Tomando datos del repositorio</h3>
+        <pre>
+            git clone url_de_mi_proyecto
+        </pre>
+      </article>
+      <article>
+        <h3>Github!</h3>
+        <ul>
+        </ul>
+        <div class="source">
+            <a href="">Documentación</a>
+        </div>
+      </article>
+      <article>
+        <h3>Github API</h3>
+        <ul>
+        </ul>
+        <div class="source">
+            <a href="">Documentación</a>
+        </div>
       </article>
       <article>
         <h3></h3>
