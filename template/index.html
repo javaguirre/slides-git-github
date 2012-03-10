@@ -40,19 +40,59 @@
       <!-- #1 -->
       <article>
         <h1>
-           Introducción a Git y Github <img src="../images/github.png" />
+           Introducción a Git y Github
         </h1>
         <p>
           <a href="http://javaguirre.net">Javier Aguirre</a>
           <br />
-          <a href="http://ctrlz.es">Miguel de la Cruz</a>
+          <a href="http://twitter.com/mgdelacroix">Miguel de la Cruz</a>
           <br/>
           13 de Feb de 2012
           <br/>
         </p>
+        <img src="../images/octobiwan.jpg" style="width: 250px; align: right; position: absolute; left: 500px;"/>
         <div class="source">
-            <a href="http://gul.es">Cursos GUL</a> - Marzo 2012
+            <a href="http://cursos.gul.es">Cursos GUL</a> - Marzo 2012
         </div>
+      </article>
+
+      <article>
+        <img src="../images/baracktocat.jpg" style="width: 650px;" class="centered"/>
+      </article>
+      <article>
+        <h3>Control de versiones</h3>
+        <p>
+            Gestión y actualización de versiones de nuestro proyecto
+        </p>
+        <p>
+            <strong>Repositorio:</strong> Archivo de versiones de nuestro proyecto
+        </p>
+        <p>
+            <strong>Versiones:</strong> Distintas actualizaciones de un proyecto
+            que se archivan en el repositorio.
+        </p>
+        <p>Una versión nueva es un <strong>commit</strong></p>
+      </article>
+
+      <article>
+        <h3>Centralizado/distribuido</h3>
+        <ul>
+            <li>Repositorio principal</li>
+            <li>Ramas</li>
+            <li>Conflictos</li>
+            <li>Colaboración sencilla</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Funcionamiento</h3>
+        <ul>
+            <li>Control de ficheros</li>
+            <li>Guardar nueva versión</li>
+            <li>Sincronizacion de código</li>
+            <li>Corrección de errores</li>
+            <li>Despliegue del proyecto</li>
+        </ul>
       </article>
 
       <!-- #2 -->
@@ -61,7 +101,6 @@
         <ul>
             <li>Creado por Linus Torvalds</li>
             <li>Control de versiones distribuido</li>
-            <li>Inspirado en BitKeeper y Monotone</li>
             <li><em>Estándar de facto</em> en el mundo del SL</li>
         </ul>
       </article>
@@ -69,20 +108,42 @@
       <!-- #3 -->
       <article>
         <h3>Instalación</h3>
+        <p></p>
         <pre>
+#Linux
 apt-get install git (git-core)
+pacman -S git
+yum install git
+#Mac
+brew install git
+#Win
+mSysGit
         </pre>
-        <h4>Primera versión</h4>
+     </article>
+     <article>
+        <h4>Creación</h4>
+        <pre>
+ssh-keygen -t rsa -C "your_email@example.com"
+        </pre>
+        <p>Creación del proyecto</p>
         <pre>
 cd miproyecto
 git init
-git add .
-git commit -m 'Primera version'
-
-# O
-
+        </pre>
+        <p>Copia de un proyecto</p>
+        <pre>
 git clone url_proyecto
         </pre>
+      </article>
+
+      <article>
+        <h4>Primera versión</h4>
+        <pre>
+touch README  # añadimos algo de información
+git add README
+git commit -m 'Primera version'
+        </pre>
+        <img src="../images/pythocat.jpg" style="width: 250px;" class="centered"/>
       </article>
 
       <!-- #4 -->
@@ -90,6 +151,7 @@ git clone url_proyecto
         <h3>
         Manejo de archivos
         </h3>
+        <p>Manejando los archivos sometidos a versiones</p>
         <pre>
 git add archivonuevo
 git rm archivoviejo
@@ -104,23 +166,23 @@ git mv archivoviejo archivonuevo
         <h3>
             Log
         </h3>
+        <p>¿Qué hay en nuestro proyecto?</p>
         <pre>
 git log  # Lista los últimos commits
 git log -n 30  # 30 ultimos commits
 git log -p  # ultimos cambios en codigo
 git log --stat  # ultimos cambios en archivos
         </pre>
-        <pre>
-
-        </pre>
       </article>
       <article>
         <h3>
             Revertir cambios
         </h3>
+        <p>Volvemos atrás en nuestro código</p>
         <pre>
 git checkout [HASH] archivos
-git reset --hard SHA
+git reset --hard SHA  # no hemos creado una nueva versión
+git revert HEAD  # crea un nuevo commit
         </pre>
       </article>
       <article>
@@ -133,10 +195,13 @@ git pull repo_remoto rama
 
 #Actualiza copia remota
 git push repo_remoto rama
-      </pre>
-      <pre>
+
+#Actualizando objetos de la copia local
+git fetch
+git merge repo_remoto rama
       </pre>
       </article>
+
       <article>
       <h3>Parcheando</h3>
       <pre>
@@ -146,63 +211,66 @@ git diff archivos > miarchivo.patch
 git apply miarchivo.patch
       </pre>
       </article>
+
       <article>
-      <h3>Ramas</h3>
-      <pre>
-        git branch mi_rama_nueva
-        git checkout mi_rama_nueva
-      </pre>
-      <p>Cuando acabemos podemos unirla a principal</p>
-      <pre>
-        git checkout master
-        git merge mi_rama_nueva
-        git push origin master
-      </pre>
+          <h3>Ramas - Funcionalidad</h3>
+          <p>Creamos una nueva funcionalidad en nuestro proyecto</p>
+          <pre>
+git branch mi_nueva_funcionalidad
+git checkout mi_nueva_funcionalidad
+          </pre>
+          <p>Cuando acabemos podemos unirla a principal</p>
+          <pre>
+# Volvemos al proyecto principal
+git checkout master
+# Nos traemos los cambios de la
+# nueva funcionalidad estable
+git merge mi_nueva_funcionalidad
+# Conflicto!
+# o
+# Si todo va bien...
+git push origin master
+          </pre>
       </article>
+
       <article>
-        <h3>Participando en un proyecto</h3>
-        <p>Ejemplo entre dos usuarios y cómo se usaría git</p>
+        <h4>Conflictos!</h4>
         <pre>
+git checkout --ours filename.c
+git checkout --theirs filename.c
+
+git show :1:file.txt  # la unión de ambas
+git show :2:file.txt  # mi version.
+git show :3:file.txt  # la versión obtenida
+
+# Finalmente..
+git add archivos
+git commit
+git push origin master
         </pre>
       </article>
-      </article>
       <article>
-        <h3>Creando un repositorio</h3>
+        <h4>Despliegue</h4>
         <pre>
-            mkdir mi_proyecto
-            cd mi_proyecto
-            git init
-            git add .
-            git commit
-            git remote add origin url_de_mi_proyecto_remota
-            git push origin master
+gem install heroku
+
+#Heroku
+heroku login
+heroku create --stack cedar
+git push heroku master
         </pre>
+        <img src="../images/spocktocat.jpg" style="width: 250px;" class="centered"/>
       </article>
       <article>
-        <h3>Tomando datos del repositorio</h3>
-        <pre>
-            git clone url_de_mi_proyecto
-        </pre>
-      </article>
-      <article>
-        <h3>Github!</h3>
+        <h3>Más Github!</h3>
         <ul>
-        </ul>
-        <div class="source">
-            <a href="">Documentación</a>
-        </div>
-      </article>
-      <article>
-        <h3>Github API</h3>
-        <ul>
-        </ul>
-        <div class="source">
-            <a href="">Documentación</a>
-        </div>
-      </article>
-      <article>
-        <h3></h3>
-        <ul>
+            <li>API</li>
+            <li>Bibliotecas API distintos lenguajes</li>
+            <li>Gestión de grupos</li>
+            <li>Bug tracker</li>
+            <li>Wiki integrada</li>
+            <li>Comparación de imágenes...</li>
+            <li>Snippets de código (Gist)</li>
         </ul>
         <div class="source">
             <a href="">Documentación</a>
@@ -226,11 +294,14 @@ git apply miarchivo.patch
         </h3>
 
         <ul>
-          <li><a href="http://javaguirre.net">Blog</a></li>
           <li>
             <a href='http://twitter.com/javaguirre'>@javaguirre</a>
           </li>
+          <li>
+            <a href='http://twitter.com/mgdelacroix'>@mgdelacroix</a>
+          </li>
         </ul>
+        <img src="../images/nyantocat.gif" style="width: 300px; margin-top: 100px;" class="centered"/>
       </article>
 
     </section>
