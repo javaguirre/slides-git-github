@@ -47,7 +47,7 @@
           <br />
           <a href="http://twitter.com/mgdelacroix">Miguel de la Cruz</a>
           <br/>
-          13 de Feb de 2012
+          13 de Mar de 2012
           <br/>
         </p>
         <img src="../images/octobiwan.jpg" style="width: 250px; align: right; position: absolute; left: 500px;"/>
@@ -56,9 +56,6 @@
         </div>
       </article>
 
-      <article>
-        <img src="../images/baracktocat.jpg" style="width: 650px;" class="centered"/>
-      </article>
       <article>
         <h3>Control de versiones</h3>
         <p>
@@ -75,12 +72,25 @@
       </article>
 
       <article>
+        <img src="../images/baracktocat.jpg" style="width: 650px;" class="centered"/>
+      </article>
+
+      <article>
         <h3>Centralizado/distribuido</h3>
         <ul>
             <li>Repositorio principal</li>
             <li>Ramas</li>
             <li>Conflictos</li>
             <li>Colaboración sencilla</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Introducción/Historia</h3>
+        <ul>
+            <li>Creado por Linus Torvalds</li>
+            <li>Control de versiones distribuido</li>
+            <li><em>Estándar de facto</em> en el mundo del SL</li>
         </ul>
       </article>
 
@@ -95,49 +105,54 @@
         </ul>
       </article>
 
-      <!-- #2 -->
-      <article>
-        <h3>Introducción/Historia</h3>
-        <ul>
-            <li>Creado por Linus Torvalds</li>
-            <li>Control de versiones distribuido</li>
-            <li><em>Estándar de facto</em> en el mundo del SL</li>
-        </ul>
-      </article>
-
       <!-- #3 -->
       <article>
         <h3>Instalación</h3>
-        <p></p>
         <pre>
 #Linux
 apt-get install git (git-core)
 pacman -S git
 yum install git
+
 #Mac
 brew install git
+
 #Win
 mSysGit
         </pre>
      </article>
+
+	 <article>
+		<h3>GitHub</h3>
+		<p>Forja de proyectos de código abierto con tintes de Red Social</p>
+		<br />
+		<img src="../images/original.jpg" class="centered" width="400px" />
+	 </article>
+
+	 <article>
+		<h3>Creación de una cuenta en GitHub</h3>
+		<p><a href="http://github.com">GitHub.com</a></p>
+		<br />
+		<img src="../images/github.png" class="centered" width="800px" />
+	 </article>
+
      <article>
-        <h4>Creación</h4>
+        <h3>Creación de un repositorio en GitHub</h3>
+        <p>Generación de un par de claves RSA</p>
         <pre>
 ssh-keygen -t rsa -C "your_email@example.com"
         </pre>
         <p>Creación del proyecto</p>
         <pre>
-cd miproyecto
-git init
-        </pre>
-        <p>Copia de un proyecto</p>
-        <pre>
-git clone url_proyecto
+# Creamos una carpeta miproyecto e iniciamos el repositorio
+git init miproyecto
+# o lo clonamos desde una URI existente
+git clone uri_proyecto
         </pre>
       </article>
 
       <article>
-        <h4>Primera versión</h4>
+        <h3>Primera versión</h3>
         <pre>
 touch README  # añadimos algo de información
 git add README
@@ -153,14 +168,50 @@ git commit -m 'Primera version'
         </h3>
         <p>Manejando los archivos sometidos a versiones</p>
         <pre>
+# Añadir archivo
 git add archivonuevo
+
+# Eliminar archivo
 git rm archivoviejo
+
+# Mover archivo
 git mv archivoviejo archivonuevo
         </pre>
-        <div class="source">
+        <!-- <div class="source">
             Fuente: <a href=""></a>
-        </div>
+	</div> -->
       </article>
+
+	  <article>
+		<h3>.gitignore</h3>
+		<p>Fichero en el que podemos indicar los archivos que nunca querremos en nuestro repositorio</p>
+		<ul>
+			<li>Útil para ficheros compilados o metadatos</li>
+			<li>Usa <strong>wildcards</strong></li>
+		</ul>
+		<br />
+		<pre>
+$ cat .gitignore
+*.pyc
+directorio_que_no_quiero/
+		</pre>
+	  </article>
+
+	  <article>
+	  	<h3>Manejo de Repositorios</h3>
+		<h4>Añadimos un repositorio remoto</h4>
+		<pre>
+git remote add nombre_repositorio URI
+		</pre>
+		<h4>Listamos nuestros repositorios remotos</h4>
+		<pre>
+git remote -vv
+		</pre>
+		<h4>Eliminamos un repositorio remoto</h4>
+		<pre>
+git remote rm nombre_repositorio
+		</pre>
+	  </article>
 
       <article>
         <h3>
@@ -207,6 +258,7 @@ git merge repo_remoto rama
       <pre>
 # Creamos un parche con la diferencia
 git diff archivos > miarchivo.patch
+
 # Aplicamos el parche en nuestro repo
 git apply miarchivo.patch
       </pre>
@@ -234,7 +286,7 @@ git push origin master
       </article>
 
       <article>
-        <h4>Conflictos!</h4>
+        <h3>Conflictos!</h3>
         <pre>
 git checkout --ours filename.c
 git checkout --theirs filename.c
@@ -249,8 +301,57 @@ git commit
 git push origin master
         </pre>
       </article>
+
       <article>
-        <h4>Despliegue</h4>
+        <h3>Más Github!</h3>
+        <ul>
+			<li><a href="http://develop.github.com/">API</a></li>
+            <li>Bibliotecas API distintos lenguajes</li>
+            <li>Gestión de grupos</li>
+            <li>Bug tracker</li>
+            <li>Wiki integrada</li>
+            <li>Comparación de imágenes...</li>
+            <li>Snippets de código (Gist)</li>
+        </ul>
+        <div class="source">
+            <a href="http://help.github.com/">Documentación</a>
+        </div>
+      </article>
+
+      <article>
+        <h3>
+            Referencias
+        </h3>
+        <ul>
+            <li><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/es/"</a>Git Magic</li>
+            <li><a href="http://help.github.com/">Github Help</a></li>
+        </ul>
+        <br />
+        <p>Presentación en... <a href="https://github.com/javaguirre/slides-git-github">github</a></p>
+      </article>
+
+	  <article>
+		<h3>Cloud 9 IDE</h3>
+		<p>IDE en la nube</p>
+		<p><a href="https://github.com/ajaxorg/cloud9/">Repositorio en GitHub</a></p>
+		<br />
+		<img src="../images/C9logo.png" width="300px" class="centered" />
+	  </article>
+
+	  <article>
+		<h3>Heroku</h3>
+		<p>Plataforma de Deploy en la nube</p>
+		<ul>
+			<li>Definimos las dependencias en un fichero</li>
+			<li>Hacemos push a heroku</li>
+			<li>Listo</li>
+		</ul>
+		<br />
+		<img src="../images/herokulogo.png" class="centered" />
+	  </article>
+
+      <article>
+        <h3>Despliegue</h3>
         <pre>
 gem install heroku
 
@@ -261,32 +362,10 @@ git push heroku master
         </pre>
         <img src="../images/spocktocat.jpg" style="width: 250px;" class="centered"/>
       </article>
-      <article>
-        <h3>Más Github!</h3>
-        <ul>
-            <li>API</li>
-            <li>Bibliotecas API distintos lenguajes</li>
-            <li>Gestión de grupos</li>
-            <li>Bug tracker</li>
-            <li>Wiki integrada</li>
-            <li>Comparación de imágenes...</li>
-            <li>Snippets de código (Gist)</li>
-        </ul>
-        <div class="source">
-            <a href="">Documentación</a>
-        </div>
-      </article>
-      <article>
-        <h3>
-            Referencias
-        </h3>
-        <ul>
-            <li><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/es/"</a>Git Magic</li>
-            <li><a href="http://help.github.com/">Github Help</a></li>
-        </ul>
-        <br />
-        <p>Presentación en... <a href="">github</a></p>
-      </article>
+
+	  <article>
+	  	<h1>Taller</h1>
+	  </article>
 
       <article>
         <h3>

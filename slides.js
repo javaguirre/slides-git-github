@@ -10,7 +10,8 @@
   URL: http://code.google.com/p/html5slides/
 */
 
-var PERMANENT_URL_PREFIX = 'http://localhost/~javaguirre/api-js-guluc3m/';
+//var PERMANENT_URL_PREFIX = 'http://localhost/~javaguirre/api-js-guluc3m/';
+var PERMANENT_URL_PREFIX = 'http://localhost:8000/';
 
 var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 
